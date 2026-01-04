@@ -1,0 +1,88 @@
+# theme = "ao"
+theme = "dark_plus"
+# theme = "tokyonight"
+# theme = "voxed"
+
+[editor]
+line-number = "relative"
+mouse = false
+cursorline = true
+completion-replace = true
+bufferline = "multiple"
+text-width = 80
+insert-final-newline = false
+trim-trailing-whitespace = true
+end-of-line-diagnostics = "hint"
+
+[editor.statusline]
+left = ["mode", "version-control", "file-name", "file-modification-indicator", "spinner"]
+center = ["file-indent-style", "read-only-indicator", "register"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+diagnostics = ["warning", "error"]
+workspace-diagnostics = ["warning", "error"]
+
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+# git-ignore = false
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+"'" = "'"
+
+# [editor.indent-guides]
+# render = true
+# character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+# skip-levels = 1
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[keys.normal]
+A-s = ":w"
+X = "extend_line_above"
+g = { a = "code_action" } # Maps `ga` to show possible code actions
+S-l = "goto_next_buffer"
+S-h = "goto_previous_buffer"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
+C-h = "jump_view_left"
+A-q = ":wbc"
+C-v = "vsplit"
+C-i = "jump_forward"
+
+[keys.insert]
+j = { j = "normal_mode" }
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
+
+[keys.normal.z]
+j = "scroll_up"
+k = "scroll_down"
+
+# create a new minor mode bound to `+`
+[keys.normal."+"]
+m = ":run-shell-command make"
+c = ":run-shell-command cargo build"
+t = ":run-shell-command cargo test"

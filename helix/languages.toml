@@ -1,0 +1,49 @@
+[[language]]
+name = "python"
+scope = "source.py"
+file-types = ["py"]
+indent = { tab-width = 4, unit="  " }
+formatter = { command = "ruff", args=["format", "--line-length", "120", "-"] }
+language-servers = [ "basedpyright", "ruff" ]
+auto-format = true
+
+[language-server.basedpyright.config.python.analysis]
+typeCheckingMode = "basic"
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "ansible"
+comment-token = "#"
+file-types = [
+  { glob = "playbooks/*.yaml" },
+  { glob = "playbooks/*.yml" },
+  { glob = "group_vars/*.yaml" },
+  { glob = "group_vars/*.yml" },
+  { glob = "host_vars/*.yaml" },
+  { glob = "host_vars/*.yml" },
+  { glob = "vars/*.yaml" },
+  { glob = "vars/*.yml" },
+  { glob = "defaults/*.yaml" },
+  { glob = "defaults/*.yml" },
+  { glob = "tasks/*.yaml" },
+  { glob = "tasks/*.yml" },
+  { glob = "handlers/*.yaml" },
+  { glob = "handlers/*.yml" },
+  { glob = "meta/*.yaml" },
+  { glob = "meta/*.yml" },
+]
+formatter = { command = "yamlfmt", args = ["-"] }
+grammar = "yaml"
+indent = { tab-width = 2, unit = "  " }
+injection-regex = "ansible"
+language-servers = ["ansible-language-server"]
+scope = "source.yaml"
+shebangs = ["ansible-playbook"]
+
+[[language]]
+name = "yaml"
+formatter = { command = "yamlfmt", args = ["-"] }
+language-servers = ["yaml-language-server"]
