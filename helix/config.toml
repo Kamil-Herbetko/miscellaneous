@@ -53,7 +53,6 @@ hidden = false
 cursor-line = "warning"
 
 [keys.normal]
-A-s = ":w"
 X = "extend_line_above"
 g = { a = "code_action" } # Maps `ga` to show possible code actions
 S-l = "goto_next_buffer"
