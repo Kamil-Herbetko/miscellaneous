@@ -3,6 +3,7 @@
 alias bedit='hx ~/.bashrc ~/.bash_aliases'
 alias resource='source ~/.bashrc'
 alias update='sudo apt update && sudo apt upgrade'
+alias zj='zellij'
 
 # Navigation
 alias ..='cd ..'
