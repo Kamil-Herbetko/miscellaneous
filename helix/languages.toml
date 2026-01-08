@@ -4,15 +4,21 @@ scope = "source.py"
 file-types = ["py"]
 indent = { tab-width = 4, unit="  " }
 formatter = { command = "ruff", args=["format", "--line-length", "120", "-"] }
-language-servers = [ "basedpyright", "ruff" ]
+language-servers = [ "ty", "ruff" ]
 auto-format = true
-
-[language-server.basedpyright.config.python.analysis]
-typeCheckingMode = "basic"
 
 [language-server.ruff]
 command = "ruff"
 args = ["server"]
+
+[language-server.ty]
+command = "ty"
+args = ["server"]
+
+[language-server.ty.config]
+inlayHints.callArgumentNames = false
+experimental.rename = true
+experimental.autoImport = true
 
 [[language]]
 name = "ansible"
