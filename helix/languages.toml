@@ -53,3 +53,7 @@ shebangs = ["ansible-playbook"]
 name = "yaml"
 formatter = { command = "yamlfmt", args = ["-"] }
 language-servers = ["yaml-language-server"]
+
+[[language]]
+name = "markdown"
+comment-tokens = ["-", "+", "*", "- [ ]", ">"]

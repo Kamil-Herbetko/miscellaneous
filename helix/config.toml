@@ -64,6 +64,25 @@ C-h = "jump_view_left"
 A-q = ":wbc"
 C-v = "vsplit"
 C-i = "jump_forward"
+"\\" = [
+    ":write-all",
+    ":insert-output lazygit >/dev/tty",
+    ":redraw",
+    ":reload-all",
+]
+"|" = [
+    ':sh rm -f /tmp/unique-file-h21a434',
+    ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-file-h21a434',
+    ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+    ':open %sh{cat /tmp/unique-file-h21a434}',
+    ':redraw',
+]
+C-r = [
+    ":write-all",
+    ":insert-output scooter --no-stdin >/dev/tty",
+    ":redraw",
+    ":reload-all",
+]
 
 [keys.insert]
 j = { j = "normal_mode" }
