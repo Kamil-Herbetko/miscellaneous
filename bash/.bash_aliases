@@ -4,8 +4,20 @@ alias bedit='hx ~/.bashrc ~/.bash_aliases'
 alias resource='source ~/.bashrc'
 alias update='sudo apt update && sudo apt upgrade'
 alias zj='zellij'
-alias cat='batcat'
-alias ls='eza'
+if command -v batcat >/dev/null 2>&1
+then
+  alias cat='batcat'
+fi
+
+if command -v eza >/dev/null 2>&1
+then
+  alias ls='eza'
+fi
+
+if command -v zoxide >/dev/null 2>&1
+then
+    eval "$(zoxide init bash)"
+fi
 
 # Navigation
 alias ..='cd ..'
