@@ -1,4 +1,3 @@
-
 // add count argument
 function repeatable(command) {
 	return {
@@ -244,6 +243,9 @@ module.exports = {
 		j: repeatable(reselect("cursorDown")),
 		k: repeatable(reselect("cursorUp")),
 		l: repeatable(reselect("cursorRight")),
+		L: "workbench.action.nextEditor",
+		H: "workbench.action.previousEditor",
+
 		w: repeatable(reselect([
 			{
 				// move right when it's boundary of words, spaces, or newline (only zero or one char if it's newline)
