@@ -1,0 +1,8 @@
+{
+    "modalEditor.misc.keybindingsInSettings": false,
+    "modalEditor.misc.autoloadPreset": "helix.js",
+    "settingsSync.ignoredExtensions": [
+        "ms-vscode-remote.remote-wsl"
+    ],
+    "github.copilot.nextEditSuggestions.enabled": true,
+}
