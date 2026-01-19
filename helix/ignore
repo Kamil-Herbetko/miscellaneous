@@ -1,5 +1,4 @@
 # Python venv
-.env
 .envrc
 .venv
 env/
